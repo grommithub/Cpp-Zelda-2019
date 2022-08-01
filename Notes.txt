@@ -1,0 +1,63 @@
+All tiles are 16x16
+
+Probably all entities need a reference to the tilemap to check for collision
+EDIT: Every entity has an OnTileMapCollide(Rectangle tile) method
+
+Every frame, the tilemap checks the collision of all its tiles. 
+If something is colliding with the tilemap, it'll call its OnTileMapCollide method with the
+rect of the tile it collided with as the argument.
+Different entities will respond differently to colliding, so this is smart
+
+The game runs natively at 255 x 224, the scale just determines the size of a pixel 
+
+Tags:
+
+P: player
+E: enemy
+T: terrain
+W: water
+
+16 x 11 tiles per screen
+3.5 tiles of black on top (56 pixels)
+
+PWD features:
+Animations		 5p
+GUI			 10p
+No memory leaks		 5
+Reading file		 10p
+
+30
+
+Hopefully adds up to 25
+
+Inventory & items:
+Player has a list of items. In the inventory, there's an item pointer to the current active item (which will be overridden)
+Player has reference to inventory (for bombs, rupies, etc)
+
+Items to implement:
+Sword Sprite 104, 0, 8, 16
+Bombs Sprite 136, 0, 8, 13
+Bow & arrow (takes 1 rupie per shot)
+Boomerang Sprite 129
+Shield
+
+Enemies to implement:
+Octorok
+Keese
+Darknut
+Rope
+
+Camera:
+Screen coords, x y
+Static camera pos, offset added everywhere
+Gets distance from last screen to desired screen, sets position to desiredposition + (offset * (currentTime / totaltime))
+Has a pause
+
+DO THE ANIMATION THING THANK YOU GOOD NIGHT
+
+PROJECTILES, EFFECTS, ITEMS
+
+
+
+
+
